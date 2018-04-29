@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/Al-I/SimplrFetchFromNasaApi",
   "author": "Ali ..",
+  "homepage":"git@github.com:ali1129js/nasatoday.git",
   "license": "MIT",
   "dependencies": {
   "react": "^15.6.1",
