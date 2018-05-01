@@ -2,10 +2,10 @@
   "name": "SimplrFetchFromNasaApi",
   "version": "1.0.0",
   "description": "A simple React App to fetch some data from Nasa public API",
+  "homepage":"ali1129js.github.io/SimpleFetchFromNasaApi",
   "main": "index.js",
-  "repository": "https://github.com/Al-I/SimplrFetchFromNasaApi",
+  "repository": "https://github.com/ali1129js/SimpleFetchFromNasaApi",
   "author": "Ali ..",
-  "homepage":"git@github.com:ali1129js/nasatoday.git",
   "license": "MIT",
   "dependencies": {
   "react": "^15.6.1",
@@ -18,6 +18,8 @@
   "start": "react-scripts start",
   "build": "react-scripts build",
   "test": "react-scripts test --env=jsdom",
-  "eject": "react-scripts eject"
+  "eject": "react-scripts eject",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"  
 }
 }
