@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2018-05-01T15:29:49+02:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-05-01T15:29:54+02:00
+ * @Last modified time: 2018-05-05T14:34:19+02:00
  */
 import React, { Component } from 'react'
 import NasaData from './Components/NasaData'
@@ -15,15 +15,7 @@ class Nasa_App extends Component {
     super(props)
     this.state = {'nasaData': {}};
   }
-componentWillMount(){
-  this.style = {
-    textAlign: 'center',
-    backgroundColor: '#edfffe',
-    border: '5px solid red',
-    margin:'10px',
-    padding: '2px'
-  }
-}
+
 componentDidMount() {
     fetch(endpoint, fetchOption)
     .then(d => d.json())
@@ -38,7 +30,7 @@ componentDidMount() {
   render() {
     console.log(this.state.nasaData);
     return (
-      <div className="Nasa_App" style={this.style}>
+      <div className="container-fluid">
         <NasaData data={this.state.nasaData}/>
       </div>
     )
