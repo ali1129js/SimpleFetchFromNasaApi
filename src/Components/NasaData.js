@@ -2,7 +2,7 @@
  * @Author: Ali Ismail
  * @Date:   2018-04-21T22:20:48+02:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-05-05T14:40:55+02:00
+ * @Last modified time: 2018-05-05T14:43:19+02:00
  */
 import React, { Component } from 'react'
 class NasaData extends Component {
@@ -17,7 +17,7 @@ class NasaData extends Component {
           <div>{date}</div>
         </h5>
         <div className="card-img-top">
-          <img title="content" className="card-img-top"
+          <img className="card-img-top"
             src={url} alt="img" /></div><br />
         <div className="card-body"><p>{explanation}</p></div>
       </div>
