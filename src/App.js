@@ -2,10 +2,11 @@
  * @Author: Ali
  * @Date:   2018-05-01T15:29:49+02:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-05-05T14:34:19+02:00
+ * @Last modified time: 2018-05-06T18:36:02+02:00
  */
 import React, { Component } from 'react'
 import NasaData from './Components/NasaData'
+import Navbar from './Components/Navbar'
 const endpoint ='https://api.nasa.gov/planetary/apod?api_key=NE8DbckQsDeZnkY5NszxfokRRpf1DjqSQFcMnhXk'
 const fetchOption = {
   method:'GET'
@@ -31,6 +32,7 @@ componentDidMount() {
     console.log(this.state.nasaData);
     return (
       <div className="container-fluid">
+        <Navbar />
         <NasaData data={this.state.nasaData}/>
       </div>
     )
