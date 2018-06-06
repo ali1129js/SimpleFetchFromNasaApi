@@ -2,42 +2,63 @@
  * @Author: Ali Ismail
  * @Date:   2018-04-21T22:20:48+02:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-05-06T15:59:24+02:00
+ * @Last modified time: 2018-06-06T14:54:42+02:00
  */
 import React, { Component } from 'react'
+
 class NasaData extends Component {
-  render() {
-    //Destructuring ES6
-    const { title, date, explanation, media_type, url} = this.props.data
-    if (media_type === "image"){
+  constructor(props) {
+    super(props);
+  this.renderVideo = this.renderVideo.bind(this)
+  this.renderImage = this.renderImage.bind(this)
+  }
+  renderVideo(){
+    if (this.props.data.media_type === 'video'){
       return (
       <div className="card border-primary bg-dark  mb-3 text-center">
         <h5 className="card-header">
-          <div className="card-title text-white">{title}</div>
-          <div className="card-title text-white">{date}</div>
+          <div className="card-title text-white">{this.props.data.title}</div>
+          <div className="card-title text-white">{this.props.data.date}</div>
         </h5>
         <div className="card-img-top">
-          <img className="card-img-top"
-            src={url} alt="img" /></div><br />
-        <div className="card-body text-danger">{explanation}</div>
+          <iframe
+            className="card-img-top"
+            src={this.props.data.url}
+            title="video"
+            width='700px'
+            height='400px'
+          /></div><br />
+        <div className="card-body text-danger">{this.props.data.explanation}</div>
       </div>
       )
     }
-    else {
+  }
+  renderImage(){
+    if (this.props.data.media_type === 'image') {
       return (
         <div className="card border-primary bg-dark  mb-3 text-center">
           <h5 className="card-header">
-            <div className="card-title text-white">{title}</div>
-            <div className="card-title text-white">{date}</div>
+            <div className="card-title text-white">{this.props.data.title}</div>
+            <div className="card-title text-white">{this.props.data.date}</div>
           </h5>
           <div className="embed-responsive">
-            <iframe
-              className="embed-responsive-item"
-              src={url} title="video" /></div><br />
-          <div className="card-body text-danger">{explanation}</div>
+            <img
+              className="card-img-top"
+              src={this.props.data.url} alt="img" />
+            </div>
+            <br />
+          <div className="card-body text-danger">{this.props.data.explanation}</div>
         </div>
       )
     }
+  }
+  render() {
+    return (
+      <div className="">
+        {this.renderVideo()}
+        {this.renderImage()}
+      </div>
+    )
   }
 }
 export default NasaData
